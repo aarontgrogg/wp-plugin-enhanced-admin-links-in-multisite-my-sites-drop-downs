@@ -3,7 +3,7 @@ Contributors: aarontgrogg
 Tags: multisite, admin, network, links
 Requires at least: 3.1
 Tested up to: 3.5
-Stable tag: 1.3
+Stable tag: 1.5
 License: GPLv2 or later
 
 
@@ -63,6 +63,14 @@ aarontgrogg@gmail.com
 
 
 == Changelog ==
+
+= 1.5 =
+2013-04-04:
+- Hopefully the last of the inconsistent naming conventions
+
+= 1.4 =
+2013-04-03:
+- Fixed a bad URL
 
 = 1.3 =
 2013-04-03:
