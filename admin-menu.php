@@ -4,7 +4,7 @@
 	Plugin Name: Enhanced Admin Links in Multisite 'My Sites' Drop-Downs
 	Plugin URI: http://aarontgrogg.com/2013/03/26/wordpress-plugin-enhanced-admin-links-in-multisite-my-sites-drop-downs/
 	Description: For multisite installations, adds 'Posts', 'Pages', 'Themes', 'Plugins', 'Tools', and 'Settings' links to all of the Admin 'My Sites' drop-down menus.
-	Version: 1.5
+	Version: 1.6
 	Author: Aaron T. Grogg
 	Author URI: http://aarontgrogg.com/
 	License: GPLv2 or later
@@ -27,7 +27,7 @@
 				foreach ($all_nodes as $node) {
 
 					// If we encounter a Dashboard, we want to add the new links
-					if ($node->title === 'Dashboard') {
+					if ($node->title === __('Dashboard')) {
 
 						// Loop through and add the new menu links
 						foreach ($links_to_add as $link) {
@@ -59,7 +59,7 @@
 							$wp_admin_bar->add_menu( array(
 								'parent' => $parent,
 								'id' => $id,
-								'title' => $link,
+								'title' => __($link),
 								'href' => $href,
 							));
 
@@ -76,8 +76,6 @@
 	} // if ( !function_exists( 'add_links_to_my_sites' ) )
 
 	// If we're in admin mode, add action to admin_bar_menu hook
-	if (is_admin()) {
-		add_action('admin_bar_menu', 'add_links_to_my_sites', 200);
-	} // is_admin
+	add_action('admin_bar_menu', 'add_links_to_my_sites', 200);
 
 ?>
